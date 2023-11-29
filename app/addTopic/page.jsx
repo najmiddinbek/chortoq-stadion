@@ -26,7 +26,7 @@ export default function AddTopic() {
     }
 
     try {
-      const res = await fetch(`/api/topics`, {
+      const res = await fetch("/api/topics", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
