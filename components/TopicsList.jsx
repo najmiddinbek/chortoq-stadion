@@ -16,11 +16,12 @@ const getTopics = async () => {
     return res.json();
   } catch (error) {
     console.log("Error loading topics: ", error);
+    return { topics: [] }; // Return a default value if there's an error
   }
 };
 
 export default async function TopicsList() {
-  const { topics } = await getTopics();
+  const { topics } = await getTopics() || { topics: [] }; // Use default value if getTopics returns undefined
 
   return (
     <>
